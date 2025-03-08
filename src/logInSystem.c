@@ -1,4 +1,5 @@
 #include "logInSystem.h"
+#include "config.h"
 
 int logInSystem(void)
 {
