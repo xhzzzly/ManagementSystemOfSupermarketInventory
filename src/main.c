@@ -14,7 +14,7 @@ void exitPrompt(void);
 int main(void)
 {
 	/* 登入功能 */
-	while (logInSystem() != 1) {
+	while (logInSystem() == 0) {
 		printf("\t\t是否继续尝试？输入0退出系统：");
 		int choice;
 		scanf("%d", &choice);
@@ -39,6 +39,6 @@ int main(void)
 void exitPrompt(void)
 {
 	system("cls");
-	printf("\t\t感谢您使用本超市库存管理系统。\n");
+	printf("\t\t感谢您使用本超市库存管理系统\n");
 	system("pause");
 }
