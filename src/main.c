@@ -5,6 +5,9 @@
 #include "logInSystem.h" /* 登入系统 */
 #include "mainMenu.h" /* 主菜单 */
 
+/* 全局变量，为所有源文件共享，声明及说明在config.h中 */
+int permission = 0;
+
 /* 函数声明，其实现在main函数后 */
 void exitPrompt(void);
 
@@ -36,6 +39,6 @@ int main(void)
 void exitPrompt(void)
 {
 	system("cls");
-	printf("感谢您使用本超市库存管理系统。\n");
+	printf("\t\t感谢您使用本超市库存管理系统。\n");
 	system("pause");
 }

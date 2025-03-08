@@ -3,11 +3,10 @@
 
 #include "config.h"
 
-/* 说明：登入系统函数。登入成功后，会将用户权限写入全局变量permission中
+/* 说明：登入系统
  * 参数：无
- * 返回值：0代表登入失败，1代表登入成功
- * 注意：注意修改变量permission
+ * 返回值：1为登入成功，0为登入失败
  */
-int logInSystem(void);
+extern int logInSystem(void);
 
 #endif
