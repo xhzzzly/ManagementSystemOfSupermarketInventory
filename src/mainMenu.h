@@ -5,6 +5,6 @@
  * 参数：无
  * 返回值：无
  */
-extern void mainMenu(void);
+void mainMenu(void);
 
 #endif
