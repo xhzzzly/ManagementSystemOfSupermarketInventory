@@ -2,6 +2,6 @@
 
 int logInSystem(void)
 {
-    /* 璇峰湪姝ゅ瀹炵幇鐧诲叆绯荤粺鍔熻兘 */
+    /* 请在此处实现登入系统功能 */
     return 0;
 }
