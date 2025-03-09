@@ -1,5 +1,4 @@
-#include "dataReadingAndStorage.h"
-#include "config.h"
+#include "permissionDegree.h"
 
 void dataReadingAndStorage(void)
 {

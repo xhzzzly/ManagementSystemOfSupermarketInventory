@@ -1,12 +1,8 @@
-#include "config.h" /* 配置文件，存着些全局变量 */
 #include "logInSystem.h" /* 登入系统 */
 #include "mainMenu.h" /* 主菜单 */
 
 #include <stdio.h>
 #include <stdlib.h>
-
-/* 全局变量，为所有源文件共享，声明及说明在config.h中 */
-int permission = 0;
 
 /* 函数声明，其实现在main函数后 */
 void exitPrompt(void);

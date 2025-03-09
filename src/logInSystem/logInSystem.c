@@ -1,5 +1,4 @@
-#include "logInSystem.h"
-#include "config.h"
+#include "permissionDegree.h"
 
 int logInSystem(void)
 {

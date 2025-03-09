@@ -1,5 +1,4 @@
-#include "mainMenu.h"
-#include "config.h"
+#include "permissionDegree.h"
 
 #include <stdio.h>
 #include <stdlib.h>

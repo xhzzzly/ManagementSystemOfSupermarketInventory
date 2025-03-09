@@ -1,5 +1,11 @@
-add_executable(ManagementSystemOfSupermarketInventory
-	main.c
-	logInSystem.c
-	mainMenu.c
+# add_executable(ManagementSystemOfSupermarketInventory
+# 	main.c
+# 	logInSystem.c
+# 	mainMenu.c
+# )
+
+add_executable(ManagementSystemOfSupermarketInventory main.c)
+target_link_libraries(ManagementSystemOfSupermarketInventory
+	mainMenu
+	logInSystem
 )

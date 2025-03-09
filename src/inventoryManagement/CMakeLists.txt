@@ -1,0 +1,4 @@
+add_library(inventoryManagement STATIC inventoryManagement.cpp)
+target_link_libraries(inventoryManagement permissionDegree)
+
+target_include_directories(inventoryManagement INTERFACE ./)

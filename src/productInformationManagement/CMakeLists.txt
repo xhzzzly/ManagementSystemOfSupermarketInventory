@@ -1,0 +1,3 @@
+add_library(productInformationManagement STATIC productInformationManagement.cpp)
+target_link_libraries(productInformationManagement permissionDegree)
+target_include_directories(productInformationManagement INTERFACE ./)

@@ -1,5 +1,4 @@
-#include "productInformationManagement.h"
-#include "config.h"
+#include "permissionDegree.h"
 
 void productInformationManagement(void)
 {
