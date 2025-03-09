@@ -4,6 +4,9 @@
 # 	mainMenu.c
 # )
 
+add_subdirectory(logInSystem)
+add_subdirectory(mainMenu)
+
 add_executable(ManagementSystemOfSupermarketInventory main.c)
 target_link_libraries(ManagementSystemOfSupermarketInventory
 	mainMenu
