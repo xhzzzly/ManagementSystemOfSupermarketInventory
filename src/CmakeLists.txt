@@ -4,6 +4,11 @@
 # 	mainMenu.c
 # )
 
+add_subdirectory(permissionDegree)
+add_subdirectory(productInformationManagement)
+add_subdirectory(dataReadingAndStorage)
+add_subdirectory(inventoryManagement)
+add_subdirectory(userPasswordManagement)
 add_subdirectory(logInSystem)
 add_subdirectory(mainMenu)
 
