@@ -6,7 +6,7 @@ add_subdirectory(userPasswordManagement)
 add_subdirectory(logInSystem)
 add_subdirectory(mainMenu)
 
-add_executable(ManagementSystemOfSupermarketInventory main.c)
+add_executable(ManagementSystemOfSupermarketInventory main.cpp)
 target_link_libraries(ManagementSystemOfSupermarketInventory
 	logInSystem
 	mainMenu

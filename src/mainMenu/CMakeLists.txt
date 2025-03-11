@@ -1,4 +1,4 @@
-add_library(mainMenu STATIC mainMenu.c)
+add_library(mainMenu STATIC mainMenu.cpp)
 target_link_libraries(mainMenu permissionDegree
                                productInformationManagement
                                inventoryManagement
