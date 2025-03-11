@@ -76,6 +76,10 @@ void addProduct()
     scanf("%d %d %d", &product.y, &product.m, &product.d);
     printf("\t\t请输入商品库存：");
     scanf("%d", &product.inventory);
+    while (product.inventory < 0) {
+        printf("\t\t库存不能为负数，请重新输入：");
+        scanf("%d", &product.inventory);
+    }
     products.push_back(product);
     printf("\t\t商品添加成功\n");
     system("pause");
@@ -113,6 +117,10 @@ void modifyProduct()
             scanf("%d %d %d", &products[i].y, &products[i].m, &products[i].d);
             printf("\t\t请输入新的商品库存：");
             scanf("%d", &products[i].inventory);
+            while (products[i].inventory < 0) {
+                printf("\t\t库存不能为负数，请重新输入：");
+                scanf("%d", &products[i].inventory);
+            }
             printf("\t\t商品修改成功\n");
             system("pause");
             return;
