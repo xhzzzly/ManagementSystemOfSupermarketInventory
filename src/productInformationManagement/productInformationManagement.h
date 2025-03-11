@@ -9,6 +9,9 @@ typedef struct {
     int y, m, d; /* 限用日期 */
 } Product;
 
+#include <vector>
+extern std::vector<Product> products;
+
 void productInformationManagement();
 
 #endif
