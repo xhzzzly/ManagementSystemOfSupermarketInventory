@@ -1,4 +1,4 @@
 add_library(dataReadingAndStorage STATIC dataReadingAndStorage.cpp)
-target_link_libraries(dataReadingAndStorage permissionDegree)
+target_link_libraries(dataReadingAndStorage permissionDegree productInformationManagement)
 
 target_include_directories(dataReadingAndStorage INTERFACE ./)
