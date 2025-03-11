@@ -1,6 +1,19 @@
 #ifndef USER_PASSWORD_MANAGEMENT_H
 #define USER_PASSWORD_MANAGEMENT_H
 
+/*
+    * 说明：初始化用户密码管理模块
+    * 形参：无
+    * 返回值：无
+
+*/
+void initUserPasswordManagement(void);
+
+/*
+    * 说明：用户密码管理
+    * 形参：无
+    * 返回值：无
+*/
 void userPasswordManagement(void);
 
 /*

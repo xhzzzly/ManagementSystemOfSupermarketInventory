@@ -1,5 +1,6 @@
 #include "logInSystem.h" /* 登入系统 */
 #include "mainMenu.h" /* 主菜单 */
+#include "userPasswordManagement.h" /* 用户密码管理 */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +10,9 @@ void exitPrompt(void);
 
 int main(void)
 {
+	/* 初始化用户密码管理模块 */
+	initUserPasswordManagement();
+
 	/* 登入功能 */
 	while (logInSystem() == 0) {
 		printf("\t\t是否继续尝试？输入0退出系统：");

@@ -10,4 +10,5 @@ add_executable(ManagementSystemOfSupermarketInventory main.c)
 target_link_libraries(ManagementSystemOfSupermarketInventory
 	logInSystem
 	mainMenu
+	userPasswordManagement
 )
