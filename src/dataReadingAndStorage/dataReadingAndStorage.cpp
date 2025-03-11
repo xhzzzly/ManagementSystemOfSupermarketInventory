@@ -55,6 +55,7 @@ void readData()
         products.push_back(product);
     }
     fclose(file);
+    printf("\t\t数据读取成功\n");
     system("pause");
 }
 
@@ -79,5 +80,7 @@ void storeData()
     for (int i = 0; i < products.size(); i++) {
         fprintf(file, "%s %s %d %d %d\n", products[i].id, products[i].name, products[i].inventory, products[i].y, products[i].m, products[i].d);
     }
+    printf("\t\t数据存储成功\n");
+    fclose(file);
     system("pause");
 }
