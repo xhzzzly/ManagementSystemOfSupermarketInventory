@@ -1,9 +1,9 @@
 #include "permissionDegree.h"
 #include "userPasswordManagement.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 int logInSystem(void)
 {

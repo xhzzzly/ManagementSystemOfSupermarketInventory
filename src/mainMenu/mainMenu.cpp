@@ -4,10 +4,10 @@
 #include "userPasswordManagement.h"
 #include "dataReadingAndStorage.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
-void mainMenu(void)
+void mainMenu()
 {
     while (1) {
         system("cls");

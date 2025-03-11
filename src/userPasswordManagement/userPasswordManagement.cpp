@@ -1,23 +1,23 @@
 #include "permissionDegree.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 char employeePassword[50] = "employee";
 char adminPassword[50] = "admin";
 
-char* getEmployeePassword(void)
+char* getEmployeePassword()
 {
     return employeePassword;
 }
 
-char* getAdminPassword(void)
+char* getAdminPassword()
 {
     return adminPassword;
 }
 
-void initUserPasswordManagement(void)
+void initUserPasswordManagement()
 {
     FILE *fp = fopen("password.dat", "rb");
     if (fp == NULL) {
@@ -31,7 +31,7 @@ void initUserPasswordManagement(void)
     }
 }
 
-void writePasswordToFile(void)
+void writePasswordToFile()
 {
     FILE *fp = fopen("password.dat", "wb");
     if (fp == NULL) {
@@ -45,7 +45,7 @@ void writePasswordToFile(void)
     }
 }
 
-void userPasswordManagement(void)
+void userPasswordManagement()
 {
     system("cls");
 

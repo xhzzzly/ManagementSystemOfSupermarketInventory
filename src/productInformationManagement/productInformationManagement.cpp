@@ -1,11 +1,11 @@
 #include "productInformationManagement.h"
 #include "permissionDegree.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
-void productInformationManagement(void)
+void productInformationManagement()
 {
     printf("\t\t  --------------- \n");
     printf("\t\t|  1. 添加商品信息  |\n");
