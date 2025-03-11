@@ -99,7 +99,7 @@ void modifyProduct()
             scanf("%lf", &products[i].purchasePrice);
             printf("\t\t请输入新的商品售价：");
             scanf("%lf", &products[i].sellingPrice);
-            printf("\t\t请输入新的商品限用日期（年 月 日）：");
+            printf("\t\t请输入新的商品限用日期（年 月 日，以空格分隔）：");
             scanf("%d %d %d", &products[i].y, &products[i].m, &products[i].d);
             printf("\t\t商品修改成功\n");
             system("pause");
@@ -134,22 +134,53 @@ void deleteProduct()
 
 void searchProduct()
 {
-    printf("\t\t请输入要查询的商品ID：");
-    char id[100];
-    scanf("%s", id);
-    for (int i = 0; i < products.size(); i++) {
-        if (strcmp(products[i].id, id) == 0) {
-            printf("\t\t商品ID：%s\n", products[i].id);
-            printf("\t\t商品名称：%s\n", products[i].name);
-            printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
-            printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
-            printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
+    printf("\t\t1. 按商品ID查询\n");
+    printf("\t\t2. 按商品名称查询\n");
+    printf("\t\t请选择查询方式：");
+    int choice;
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1:
+            printf("\t\t请输入商品ID：");
+            char id[100];
+            scanf("%s", id);
+            for (int i = 0; i < products.size(); i++) {
+                if (strcmp(products[i].id, id) == 0) {
+                    printf("\t\t商品ID：%s\n", products[i].id);
+                    printf("\t\t商品名称：%s\n", products[i].name);
+                    printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
+                    printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+                    printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
+                    system("pause");
+                    return;
+                }
+            }
+            printf("\t\t未找到该商品\n");
             system("pause");
-            return;
-        }
+            break;
+        case 2:
+            printf("\t\t请输入商品名称：");
+            char name[100];
+            scanf("%s", name);
+            for (int i = 0; i < products.size(); i++) {
+                if (strcmp(products[i].name, name) == 0) {
+                    printf("\t\t商品ID：%s\n", products[i].id);
+                    printf("\t\t商品名称：%s\n", products[i].name);
+                    printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
+                    printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+                    printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
+                    system("pause");
+                    return;
+                }
+            }
+            printf("\t\t未找到该商品\n");
+            system("pause");
+            break;
+        default:
+            printf("\t\t输入错误，请重新输入\n");
+            system("pause");
+            break;
     }
-    printf("\t\t未找到该商品\n");
-    system("pause");
 }
 
 void displayProduct()
