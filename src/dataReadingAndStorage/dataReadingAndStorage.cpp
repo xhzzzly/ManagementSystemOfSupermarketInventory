@@ -29,9 +29,9 @@ void dataReadingAndStorage()
         case 0:
             return;
         default:
-            printf("\t\t输入错误，请重新输入\n");
+            printf("\t\t输入错误\n");
             system("pause");
-            break;
+            return;
     }
 }
 
@@ -51,7 +51,7 @@ void readData()
     products.clear();
     while (!feof(file)) {
         Product product;
-        fscanf(file, "%s %s %d %d %d %d\n", product.id, product.name, &product.inventory, &product.y, &product.m, &product.d);
+        fscanf(file, "%s %s %lf %lf %d %d %d %d\n", product.id, product.name, &product.purchasePrice, &product.sellingPrice, &product.inventory, &product.y, &product.m, &product.d);
         products.push_back(product);
     }
     fclose(file);
@@ -78,7 +78,7 @@ void storeData()
         return;
     }
     for (int i = 0; i < products.size(); i++) {
-        fprintf(file, "%s %s %d %d %d\n", products[i].id, products[i].name, products[i].inventory, products[i].y, products[i].m, products[i].d);
+        fprintf(file, "%s %s %lf %lf %d %d %d %d\n", products[i].id, products[i].name, products[i].purchasePrice, products[i].sellingPrice, products[i].inventory, products[i].y, products[i].m, products[i].d);
     }
     printf("\t\t数据存储成功\n");
     fclose(file);
