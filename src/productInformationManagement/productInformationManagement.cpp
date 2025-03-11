@@ -74,6 +74,8 @@ void addProduct()
     scanf("%lf", &product.sellingPrice);
     printf("\t\t请输入商品限用日期（年 月 日）：");
     scanf("%d %d %d", &product.y, &product.m, &product.d);
+    printf("\t\t请输入商品库存：");
+    scanf("%d", &product.inventory);
     products.push_back(product);
     printf("\t\t商品添加成功\n");
     system("pause");
@@ -91,6 +93,14 @@ void modifyProduct()
     scanf("%s", id);
     for (int i = 0; i < products.size(); i++) {
         if (strcmp(products[i].id, id) == 0) {
+            system("cls");
+            printf("\t\t当前商品信息如下：\n");
+            printf("\t\t商品ID：%s\n", products[i].id);
+            printf("\t\t商品名称：%s\n", products[i].name);
+            printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
+            printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+            printf("\t\t商品库存：%d\n", products[i].inventory);
+            printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
             printf("\t\t请输入新的商品ID：");
             scanf("%s", products[i].id);
             printf("\t\t请输入新的商品名称：");
@@ -99,8 +109,10 @@ void modifyProduct()
             scanf("%lf", &products[i].purchasePrice);
             printf("\t\t请输入新的商品售价：");
             scanf("%lf", &products[i].sellingPrice);
-            printf("\t\t请输入新的商品限用日期（年 月 日，以空格分隔）：");
+            printf("\t\t请输入新的商品限用日期（年 月 日）：");
             scanf("%d %d %d", &products[i].y, &products[i].m, &products[i].d);
+            printf("\t\t请输入新的商品库存：");
+            scanf("%d", &products[i].inventory);
             printf("\t\t商品修改成功\n");
             system("pause");
             return;
@@ -150,6 +162,7 @@ void searchProduct()
                     printf("\t\t商品名称：%s\n", products[i].name);
                     printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
                     printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+                    printf("\t\t商品库存：%d\n", products[i].inventory);
                     printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
                     system("pause");
                     return;
@@ -168,6 +181,7 @@ void searchProduct()
                     printf("\t\t商品名称：%s\n", products[i].name);
                     printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
                     printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+                    printf("\t\t商品库存：%d\n", products[i].inventory);
                     printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
                     system("pause");
                     return;
@@ -190,6 +204,7 @@ void displayProduct()
         printf("\t\t商品名称：%s\n", products[i].name);
         printf("\t\t商品进价：%.2lf\n", products[i].purchasePrice);
         printf("\t\t商品售价：%.2lf\n", products[i].sellingPrice);
+        printf("\t\t商品库存：%d\n", products[i].inventory);
         printf("\t\t商品限用日期：%d年%d月%d日\n", products[i].y, products[i].m, products[i].d);
     }
     system("pause");

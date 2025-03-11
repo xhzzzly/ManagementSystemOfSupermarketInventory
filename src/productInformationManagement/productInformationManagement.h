@@ -6,6 +6,7 @@ typedef struct {
     char name[100];
     double purchasePrice;
     double sellingPrice;
+    int inventory;
     int y, m, d; /* 限用日期 */
 } Product;
 
