@@ -2,13 +2,13 @@
 #include "mainMenu.h" /* 主菜单 */
 #include "userPasswordManagement.h" /* 用户密码管理 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 /* 函数声明，其实现在main函数后 */
-void exitPrompt(void);
+void exitPrompt();
 
-int main(void)
+int main()
 {
 	/* 初始化用户密码管理模块 */
 	initUserPasswordManagement();
@@ -36,7 +36,7 @@ int main(void)
  * 参数：无
  * 返回值：无
 */
-void exitPrompt(void)
+void exitPrompt()
 {
 	system("cls");
 	printf("\t\t感谢您使用本超市库存管理系统\n");

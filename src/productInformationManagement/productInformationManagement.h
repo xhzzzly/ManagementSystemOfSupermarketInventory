@@ -9,6 +9,6 @@ typedef struct {
     int y, m, d; /* 限用日期 */
 } Product;
 
-void productInformationManagement(void);
+void productInformationManagement();
 
 #endif

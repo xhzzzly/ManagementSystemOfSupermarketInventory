@@ -1,6 +1,6 @@
 #include "permissionDegree.h"
 
-void inventoryManagement(void)
+void inventoryManagement()
 {
 
 }
