@@ -1,0 +1,15 @@
+add_subdirectory(permissionDegree)
+add_subdirectory(productInformationManagement)
+add_subdirectory(dataReadingAndStorage)
+add_subdirectory(inventoryManagement)
+add_subdirectory(userPasswordManagement)
+add_subdirectory(logInSystem)
+add_subdirectory(mainMenu)
+
+
+add_executable(ManagementSystemOfSupermarketInventory main.cpp)
+target_link_libraries(ManagementSystemOfSupermarketInventory
+	logInSystem
+	mainMenu
+	userPasswordManagement
+)
