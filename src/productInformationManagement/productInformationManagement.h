@@ -13,6 +13,11 @@ struct Product {
 #include <vector>
 extern std::vector<Product> products;
 
+/*
+    * 说明：产品信息管理
+    * 输入参数：无
+    * 返回值：无
+*/
 void productInformationManagement();
 
 #endif
