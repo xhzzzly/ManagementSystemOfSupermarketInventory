@@ -2,31 +2,31 @@
 #define USER_PASSWORD_MANAGEMENT_H
 
 /*
-    * ËµÃ÷£º³õÊ¼»¯ÓÃ»§ÃÜÂë¹ÜÀíÄ£¿é
-    * ÐÎ²Î£ºÎÞ
-    * ·µ»ØÖµ£ºÎÞ
+    * è¯´æ˜Žï¼šåˆå§‹åŒ–ç”¨æˆ·å¯†ç ç®¡ç†æ¨¡å—
+    * å½¢å‚ï¼šæ— 
+    * è¿”å›žå€¼ï¼šæ— 
 
 */
 void initUserPasswordManagement();
 
 /*
-    * ËµÃ÷£ºÓÃ»§ÃÜÂë¹ÜÀí
-    * ÐÎ²Î£ºÎÞ
-    * ·µ»ØÖµ£ºÎÞ
+    * è¯´æ˜Žï¼šç”¨æˆ·å¯†ç ç®¡ç†
+    * å½¢å‚ï¼šæ— 
+    * è¿”å›žå€¼ï¼šæ— 
 */
 void userPasswordManagement();
 
 /*
-    * ËµÃ÷£º»ñÈ¡ÆÕÍ¨Ô±¹¤ÃÜÂë
-    * ÐÎ²Î£ºÎÞ
-    * ·µ»ØÖµ£ºÆÕÍ¨Ô±¹¤ÃÜÂë (char[50])
+    * è¯´æ˜Žï¼šèŽ·å–æ™®é€šå‘˜å·¥å¯†ç 
+    * å½¢å‚ï¼šæ— 
+    * è¿”å›žå€¼ï¼šæ™®é€šå‘˜å·¥å¯†ç  (char[50])
 */
 char* getEmployeePassword();
 
 /*
-    * ËµÃ÷£º»ñÈ¡¹ÜÀíÔ±ÃÜÂë
-    * ÐÎ²Î£ºÎÞ
-    * ·µ»ØÖµ£º¹ÜÀíÔ±ÃÜÂë (char[50])
+    * è¯´æ˜Žï¼šèŽ·å–ç®¡ç†å‘˜å¯†ç 
+    * å½¢å‚ï¼šæ— 
+    * è¿”å›žå€¼ï¼šç®¡ç†å‘˜å¯†ç  (char[50])
 */
 char* getAdminPassword();
 

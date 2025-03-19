@@ -18,14 +18,14 @@ void productInformationManagement()
 {
     system("cls");
     printf("\t\t  ------------------ \n");
-    printf("\t\t|  1. Ìí¼ÓÉÌÆ·ĞÅÏ¢    |\n");
-    printf("\t\t|  2. ĞŞ¸ÄÉÌÆ·ĞÅÏ¢    |\n");
-    printf("\t\t|  3. É¾³ıÉÌÆ·ĞÅÏ¢    |\n");
-    printf("\t\t|  4. ²éÑ¯ÉÌÆ·ĞÅÏ¢    |\n");
-    printf("\t\t|  6. ÏÔÊ¾ÉÌÆ·ĞÅÏ¢    |\n");
-    printf("\t\t|  0. ·µ»ØÉÏÒ»¼¶²Ëµ¥  |\n");
+    printf("\t\t|  1. æ·»åŠ å•†å“ä¿¡æ¯    |\n");
+    printf("\t\t|  2. ä¿®æ”¹å•†å“ä¿¡æ¯    |\n");
+    printf("\t\t|  3. åˆ é™¤å•†å“ä¿¡æ¯    |\n");
+    printf("\t\t|  4. æŸ¥è¯¢å•†å“ä¿¡æ¯    |\n");
+    printf("\t\t|  6. æ˜¾ç¤ºå•†å“ä¿¡æ¯    |\n");
+    printf("\t\t|  0. è¿”å›ä¸Šä¸€çº§èœå•  |\n");
     printf("\t\t  ------------------ \n");
-    printf("\t\t  ÇëÑ¡Ôñ¹¦ÄÜ£º");
+    printf("\t\t  è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
     int choice;
     scanf("%d", &choice);
     switch (choice) {
@@ -50,7 +50,7 @@ void productInformationManagement()
         case 0:
             return;
         default:
-            printf("\t\tÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+            printf("\t\tè¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             system("pause");
             break;
     }
@@ -59,147 +59,147 @@ void productInformationManagement()
 void addProduct()
 {
     if (getPermissionDegree() == 1) {
-        printf("\t\tÄúÃ»ÓĞÈ¨ÏŞ½øĞĞ´Ë²Ù×÷\n");
+        printf("\t\tæ‚¨æ²¡æœ‰æƒé™è¿›è¡Œæ­¤æ“ä½œ\n");
         system("pause");
         return;
     }
     Product product;
-    printf("\t\tÇëÊäÈëÉÌÆ·ID£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“IDï¼š");
     scanf("%s", product.id);
-    printf("\t\tÇëÊäÈëÉÌÆ·Ãû³Æ£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“åç§°ï¼š");
     scanf("%s", product.name);
-    printf("\t\tÇëÊäÈëÉÌÆ·½ø¼Û£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“è¿›ä»·ï¼š");
     scanf("%lf", &product.purchasePrice);
-    printf("\t\tÇëÊäÈëÉÌÆ·ÊÛ¼Û£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“å”®ä»·ï¼š");
     scanf("%lf", &product.sellingPrice);
-    printf("\t\tÇëÊäÈëÉÌÆ·ÏŞÓÃÈÕÆÚ£¨Äê ÔÂ ÈÕ£©£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“é™ç”¨æ—¥æœŸï¼ˆå¹´ æœˆ æ—¥ï¼‰ï¼š");
     scanf("%d %d %d", &product.y, &product.m, &product.d);
-    printf("\t\tÇëÊäÈëÉÌÆ·¿â´æ£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“åº“å­˜ï¼š");
     scanf("%d", &product.inventory);
     while (product.inventory < 0) {
-        printf("\t\t¿â´æ²»ÄÜÎª¸ºÊı£¬ÇëÖØĞÂÊäÈë£º");
+        printf("\t\tåº“å­˜ä¸èƒ½ä¸ºè´Ÿæ•°ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š");
         scanf("%d", &product.inventory);
     }
     products.push_back(product);
-    printf("\t\tÉÌÆ·Ìí¼Ó³É¹¦\n");
+    printf("\t\tå•†å“æ·»åŠ æˆåŠŸ\n");
     system("pause");
 }
 
 void modifyProduct()
 {
     if (getPermissionDegree() != 3) {
-        printf("\t\tÄúÃ»ÓĞÈ¨ÏŞ½øĞĞ´Ë²Ù×÷\n");
+        printf("\t\tæ‚¨æ²¡æœ‰æƒé™è¿›è¡Œæ­¤æ“ä½œ\n");
         system("pause");
         return;
     }
-    printf("\t\tÇëÊäÈëÒªĞŞ¸ÄµÄÉÌÆ·ID£º");
+    printf("\t\tè¯·è¾“å…¥è¦ä¿®æ”¹çš„å•†å“IDï¼š");
     char id[100];
     scanf("%s", id);
     for (int i = 0; i < products.size(); i++) {
         if (strcmp(products[i].id, id) == 0) {
             system("cls");
-            printf("\t\tµ±Ç°ÉÌÆ·ĞÅÏ¢ÈçÏÂ£º\n");
-            printf("\t\tÉÌÆ·ID£º%s\n", products[i].id);
-            printf("\t\tÉÌÆ·Ãû³Æ£º%s\n", products[i].name);
-            printf("\t\tÉÌÆ·½ø¼Û£º%.2lf\n", products[i].purchasePrice);
-            printf("\t\tÉÌÆ·ÊÛ¼Û£º%.2lf\n", products[i].sellingPrice);
-            printf("\t\tÉÌÆ·¿â´æ£º%d\n", products[i].inventory);
-            printf("\t\tÉÌÆ·ÏŞÓÃÈÕÆÚ£º%dÄê%dÔÂ%dÈÕ\n", products[i].y, products[i].m, products[i].d);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·ID£º");
+            printf("\t\tå½“å‰å•†å“ä¿¡æ¯å¦‚ä¸‹ï¼š\n");
+            printf("\t\tå•†å“IDï¼š%s\n", products[i].id);
+            printf("\t\tå•†å“åç§°ï¼š%s\n", products[i].name);
+            printf("\t\tå•†å“è¿›ä»·ï¼š%.2lf\n", products[i].purchasePrice);
+            printf("\t\tå•†å“å”®ä»·ï¼š%.2lf\n", products[i].sellingPrice);
+            printf("\t\tå•†å“åº“å­˜ï¼š%d\n", products[i].inventory);
+            printf("\t\tå•†å“é™ç”¨æ—¥æœŸï¼š%då¹´%dæœˆ%dæ—¥\n", products[i].y, products[i].m, products[i].d);
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“IDï¼š");
             scanf("%s", products[i].id);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·Ãû³Æ£º");
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“åç§°ï¼š");
             scanf("%s", products[i].name);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·½ø¼Û£º");
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“è¿›ä»·ï¼š");
             scanf("%lf", &products[i].purchasePrice);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·ÊÛ¼Û£º");
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“å”®ä»·ï¼š");
             scanf("%lf", &products[i].sellingPrice);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·ÏŞÓÃÈÕÆÚ£¨Äê ÔÂ ÈÕ£©£º");
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“é™ç”¨æ—¥æœŸï¼ˆå¹´ æœˆ æ—¥ï¼‰ï¼š");
             scanf("%d %d %d", &products[i].y, &products[i].m, &products[i].d);
-            printf("\t\tÇëÊäÈëĞÂµÄÉÌÆ·¿â´æ£º");
+            printf("\t\tè¯·è¾“å…¥æ–°çš„å•†å“åº“å­˜ï¼š");
             scanf("%d", &products[i].inventory);
             while (products[i].inventory < 0) {
-                printf("\t\t¿â´æ²»ÄÜÎª¸ºÊı£¬ÇëÖØĞÂÊäÈë£º");
+                printf("\t\tåº“å­˜ä¸èƒ½ä¸ºè´Ÿæ•°ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š");
                 scanf("%d", &products[i].inventory);
             }
-            printf("\t\tÉÌÆ·ĞŞ¸Ä³É¹¦\n");
+            printf("\t\tå•†å“ä¿®æ”¹æˆåŠŸ\n");
             system("pause");
             return;
         }
     }
-    printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+    printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
     system("pause");
 }
 
 void deleteProduct()
 {
     if (getPermissionDegree() != 3) {
-        printf("\t\tÄúÃ»ÓĞÈ¨ÏŞ½øĞĞ´Ë²Ù×÷\n");
+        printf("\t\tæ‚¨æ²¡æœ‰æƒé™è¿›è¡Œæ­¤æ“ä½œ\n");
         system("pause");
         return;
     }
-    printf("\t\tÇëÊäÈëÒªÉ¾³ıµÄÉÌÆ·ID£º");
+    printf("\t\tè¯·è¾“å…¥è¦åˆ é™¤çš„å•†å“IDï¼š");
     char id[100];
     scanf("%s", id);
     for (int i = 0; i < products.size(); i++) {
         if (strcmp(products[i].id, id) == 0) {
             products.erase(products.begin() + i);
-            printf("\t\tÉÌÆ·É¾³ı³É¹¦\n");
+            printf("\t\tå•†å“åˆ é™¤æˆåŠŸ\n");
             system("pause");
             return;
         }
     }
-    printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+    printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
     system("pause");
 }
 
 void searchProduct()
 {
-    printf("\t\t1. °´ÉÌÆ·ID²éÑ¯\n");
-    printf("\t\t2. °´ÉÌÆ·Ãû³Æ²éÑ¯\n");
-    printf("\t\tÇëÑ¡Ôñ²éÑ¯·½Ê½£º");
+    printf("\t\t1. æŒ‰å•†å“IDæŸ¥è¯¢\n");
+    printf("\t\t2. æŒ‰å•†å“åç§°æŸ¥è¯¢\n");
+    printf("\t\tè¯·é€‰æ‹©æŸ¥è¯¢æ–¹å¼ï¼š");
     int choice;
     scanf("%d", &choice);
     switch (choice) {
         case 1:
-            printf("\t\tÇëÊäÈëÉÌÆ·ID£º");
+            printf("\t\tè¯·è¾“å…¥å•†å“IDï¼š");
             char id[100];
             scanf("%s", id);
             for (int i = 0; i < products.size(); i++) {
                 if (strcmp(products[i].id, id) == 0) {
-                    printf("\t\tÉÌÆ·ID£º%s\n", products[i].id);
-                    printf("\t\tÉÌÆ·Ãû³Æ£º%s\n", products[i].name);
-                    printf("\t\tÉÌÆ·½ø¼Û£º%.2lf\n", products[i].purchasePrice);
-                    printf("\t\tÉÌÆ·ÊÛ¼Û£º%.2lf\n", products[i].sellingPrice);
-                    printf("\t\tÉÌÆ·¿â´æ£º%d\n", products[i].inventory);
-                    printf("\t\tÉÌÆ·ÏŞÓÃÈÕÆÚ£º%dÄê%dÔÂ%dÈÕ\n", products[i].y, products[i].m, products[i].d);
+                    printf("\t\tå•†å“IDï¼š%s\n", products[i].id);
+                    printf("\t\tå•†å“åç§°ï¼š%s\n", products[i].name);
+                    printf("\t\tå•†å“è¿›ä»·ï¼š%.2lf\n", products[i].purchasePrice);
+                    printf("\t\tå•†å“å”®ä»·ï¼š%.2lf\n", products[i].sellingPrice);
+                    printf("\t\tå•†å“åº“å­˜ï¼š%d\n", products[i].inventory);
+                    printf("\t\tå•†å“é™ç”¨æ—¥æœŸï¼š%då¹´%dæœˆ%dæ—¥\n", products[i].y, products[i].m, products[i].d);
                     system("pause");
                     return;
                 }
             }
-            printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+            printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
             system("pause");
             break;
         case 2:
-            printf("\t\tÇëÊäÈëÉÌÆ·Ãû³Æ£º");
+            printf("\t\tè¯·è¾“å…¥å•†å“åç§°ï¼š");
             char name[100];
             scanf("%s", name);
             for (int i = 0; i < products.size(); i++) {
                 if (strcmp(products[i].name, name) == 0) {
-                    printf("\t\tÉÌÆ·ID£º%s\n", products[i].id);
-                    printf("\t\tÉÌÆ·Ãû³Æ£º%s\n", products[i].name);
-                    printf("\t\tÉÌÆ·½ø¼Û£º%.2lf\n", products[i].purchasePrice);
-                    printf("\t\tÉÌÆ·ÊÛ¼Û£º%.2lf\n", products[i].sellingPrice);
-                    printf("\t\tÉÌÆ·¿â´æ£º%d\n", products[i].inventory);
-                    printf("\t\tÉÌÆ·ÏŞÓÃÈÕÆÚ£º%dÄê%dÔÂ%dÈÕ\n", products[i].y, products[i].m, products[i].d);
+                    printf("\t\tå•†å“IDï¼š%s\n", products[i].id);
+                    printf("\t\tå•†å“åç§°ï¼š%s\n", products[i].name);
+                    printf("\t\tå•†å“è¿›ä»·ï¼š%.2lf\n", products[i].purchasePrice);
+                    printf("\t\tå•†å“å”®ä»·ï¼š%.2lf\n", products[i].sellingPrice);
+                    printf("\t\tå•†å“åº“å­˜ï¼š%d\n", products[i].inventory);
+                    printf("\t\tå•†å“é™ç”¨æ—¥æœŸï¼š%då¹´%dæœˆ%dæ—¥\n", products[i].y, products[i].m, products[i].d);
                     system("pause");
                     return;
                 }
             }
-            printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+            printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
             system("pause");
             break;
         default:
-            printf("\t\tÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+            printf("\t\tè¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             system("pause");
             break;
     }
@@ -208,12 +208,12 @@ void searchProduct()
 void displayProduct()
 {
     for (int i = 0; i < products.size(); i++) {
-        printf("\t\tÉÌÆ·ID£º%s\n", products[i].id);
-        printf("\t\tÉÌÆ·Ãû³Æ£º%s\n", products[i].name);
-        printf("\t\tÉÌÆ·½ø¼Û£º%.2lf\n", products[i].purchasePrice);
-        printf("\t\tÉÌÆ·ÊÛ¼Û£º%.2lf\n", products[i].sellingPrice);
-        printf("\t\tÉÌÆ·¿â´æ£º%d\n", products[i].inventory);
-        printf("\t\tÉÌÆ·ÏŞÓÃÈÕÆÚ£º%dÄê%dÔÂ%dÈÕ\n", products[i].y, products[i].m, products[i].d);
+        printf("\t\tå•†å“IDï¼š%s\n", products[i].id);
+        printf("\t\tå•†å“åç§°ï¼š%s\n", products[i].name);
+        printf("\t\tå•†å“è¿›ä»·ï¼š%.2lf\n", products[i].purchasePrice);
+        printf("\t\tå•†å“å”®ä»·ï¼š%.2lf\n", products[i].sellingPrice);
+        printf("\t\tå•†å“åº“å­˜ï¼š%d\n", products[i].inventory);
+        printf("\t\tå•†å“é™ç”¨æ—¥æœŸï¼š%då¹´%dæœˆ%dæ—¥\n", products[i].y, products[i].m, products[i].d);
     }
     system("pause");
 }

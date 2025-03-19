@@ -21,7 +21,7 @@ void initUserPasswordManagement()
 {
     FILE *fp = fopen("password.dat", "rb");
     if (fp == NULL) {
-        printf("\t\tÎ´ÕÒµ½ÃÜÂëÎÄ¼ş£¬½«Ê¹ÓÃÄ¬ÈÏÃÜÂë¡£\n");
+        printf("\t\tæœªæ‰¾åˆ°å¯†ç æ–‡ä»¶ï¼Œå°†ä½¿ç”¨é»˜è®¤å¯†ç ã€‚\n");
         system("pause");
         return;
     } else {
@@ -35,7 +35,7 @@ void writePasswordToFile()
 {
     FILE *fp = fopen("password.dat", "wb");
     if (fp == NULL) {
-        printf("\t\tÃÜÂëÎÄ¼şĞ´ÈëÊ§°Ü£¡ÄãµÄĞŞ¸ÄÎŞ·¨±£´æµ½ÎÄ¼şÖĞ¡£\n");
+        printf("\t\tå¯†ç æ–‡ä»¶å†™å…¥å¤±è´¥ï¼ä½ çš„ä¿®æ”¹æ— æ³•ä¿å­˜åˆ°æ–‡ä»¶ä¸­ã€‚\n");
         system("pause");
         return;
     } else {
@@ -50,43 +50,43 @@ void userPasswordManagement()
     system("cls");
 
     if (getPermissionDegree() != 3) {
-        printf("\t\tÈ¨ÏŞ²»×ã£¡\n");
+        printf("\t\tæƒé™ä¸è¶³ï¼\n");
         system("pause");
         return;
     }
 
     printf("\t\t   ----------------------  \n");
-    printf("\t\t|  ÇëÑ¡ÔñÄãÒªĞŞ¸ÄµÄÃÜÂë    |\n");
-    printf("\t\t|  1. ÆÕÍ¨Ô±¹¤ÃÜÂë         |\n");
-    printf("\t\t|  2. ¹ÜÀíÔ±ÃÜÂë           |\n");
-    printf("\t\t|  3. ÖØÖÃËùÓĞÃÜÂëÎªÄ¬ÈÏÖµ |\n");
-    printf("\t\t|  0. ·µ»Ø                 |\n");
+    printf("\t\t|  è¯·é€‰æ‹©ä½ è¦ä¿®æ”¹çš„å¯†ç     |\n");
+    printf("\t\t|  1. æ™®é€šå‘˜å·¥å¯†ç          |\n");
+    printf("\t\t|  2. ç®¡ç†å‘˜å¯†ç            |\n");
+    printf("\t\t|  3. é‡ç½®æ‰€æœ‰å¯†ç ä¸ºé»˜è®¤å€¼ |\n");
+    printf("\t\t|  0. è¿”å›                 |\n");
     printf("\t\t   ----------------------  \n");
-    printf("\t\tÇëÊäÈëÄãµÄÑ¡Ôñ£º");
+    printf("\t\tè¯·è¾“å…¥ä½ çš„é€‰æ‹©ï¼š");
 
     int choice;
     scanf("%d", &choice);
     char password1[50];
     char password2[50];
     if (choice == 1) {
-        printf("\t\tÇëÊäÈëĞÂµÄÆÕÍ¨Ô±¹¤ÃÜÂë£º");
+        printf("\t\tè¯·è¾“å…¥æ–°çš„æ™®é€šå‘˜å·¥å¯†ç ï¼š");
         scanf("%s", password1);
-        printf("\t\tÇëÔÙ´ÎÊäÈëÆÕÍ¨Ô±¹¤ÃÜÂë£º");
+        printf("\t\tè¯·å†æ¬¡è¾“å…¥æ™®é€šå‘˜å·¥å¯†ç ï¼š");
         scanf("%s", password2);
         if (strcmp(password1, password2) != 0) {
-            printf("\t\tÁ½´ÎÊäÈë²»Ò»ÖÂ£¡\n");
+            printf("\t\tä¸¤æ¬¡è¾“å…¥ä¸ä¸€è‡´ï¼\n");
             system("pause");
             return;
         }
         strcpy(employeePassword, password1);
         writePasswordToFile();
     } else if (choice == 2) {
-        printf("\t\tÇëÊäÈëĞÂµÄ¹ÜÀíÔ±ÃÜÂë£º");
+        printf("\t\tè¯·è¾“å…¥æ–°çš„ç®¡ç†å‘˜å¯†ç ï¼š");
         scanf("%s", password1);
-        printf("\t\tÇëÔÙ´ÎÊäÈë¹ÜÀíÔ±ÃÜÂë£º");
+        printf("\t\tè¯·å†æ¬¡è¾“å…¥ç®¡ç†å‘˜å¯†ç ï¼š");
         scanf("%s", password2);
         if (strcmp(password1, password2) != 0) {
-            printf("\t\tÁ½´ÎÊäÈë²»Ò»ÖÂ£¡\n");
+            printf("\t\tä¸¤æ¬¡è¾“å…¥ä¸ä¸€è‡´ï¼\n");
             system("pause");
             return;
         }
@@ -99,11 +99,11 @@ void userPasswordManagement()
     } else if (choice == 0) {
         return;
     } else {
-        printf("\t\tÊäÈë´íÎó£¡\n");
+        printf("\t\tè¾“å…¥é”™è¯¯ï¼\n");
         system("pause");
         return;
     }
 
-    printf("\t\tĞŞ¸Ä³É¹¦£¡\n");
+    printf("\t\tä¿®æ”¹æˆåŠŸï¼\n");
     system("pause");
 }

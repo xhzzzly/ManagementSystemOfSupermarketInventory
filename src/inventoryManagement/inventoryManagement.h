@@ -2,9 +2,9 @@
 #define INVENTORY_MANAGEMENT_H
 
 /*
-    * ËµÃ÷£º¿â´æ¹ÜÀí
-    * ÊäÈë²ÎÊý£ºÎÞ
-    * ·µ»ØÖµ£ºÎÞ
+    * è¯´æ˜Žï¼šåº“å­˜ç®¡ç†
+    * è¾“å…¥å‚æ•°ï¼šæ— 
+    * è¿”å›žå€¼ï¼šæ— 
 */
 void inventoryManagement();
 

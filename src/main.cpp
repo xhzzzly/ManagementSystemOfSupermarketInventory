@@ -1,21 +1,21 @@
-#include "logInSystem.h" /* µÇÈëÏµÍ³ */
-#include "mainMenu.h" /* Ö÷²Ëµ¥ */
-#include "userPasswordManagement.h" /* ÓÃ»§ÃÜÂë¹ÜÀí */
+#include "logInSystem.h" /* ç™»å…¥ç³»ç»Ÿ */
+#include "mainMenu.h" /* ä¸»èœå• */
+#include "userPasswordManagement.h" /* ç”¨æˆ·å¯†ç ç®¡ç† */
 
 #include <cstdio>
 #include <cstdlib>
 
-/* º¯ÊıÉùÃ÷£¬ÆäÊµÏÖÔÚmainº¯Êıºó */
+/* å‡½æ•°å£°æ˜ï¼Œå…¶å®ç°åœ¨mainå‡½æ•°å */
 void exitPrompt();
 
 int main()
 {
-	/* ³õÊ¼»¯ÓÃ»§ÃÜÂë¹ÜÀíÄ£¿é */
+	/* åˆå§‹åŒ–ç”¨æˆ·å¯†ç ç®¡ç†æ¨¡å— */
 	initUserPasswordManagement();
 
-	/* µÇÈë¹¦ÄÜ */
+	/* ç™»å…¥åŠŸèƒ½ */
 	while (logInSystem() == 0) {
-		printf("\t\tÊÇ·ñ¼ÌĞø³¢ÊÔ£¿ÊäÈë0ÍË³öÏµÍ³£º");
+		printf("\t\tæ˜¯å¦ç»§ç»­å°è¯•ï¼Ÿè¾“å…¥0é€€å‡ºç³»ç»Ÿï¼š");
 		int choice;
 		scanf("%d", &choice);
 		if (choice == 0) {
@@ -24,7 +24,7 @@ int main()
 		}
 	}
 	
-	/* ½øÈëÖ÷²Ëµ¥ */
+	/* è¿›å…¥ä¸»èœå• */
 	mainMenu();
 	
 	exitPrompt();
@@ -32,13 +32,13 @@ int main()
 }
 
 /*
- * º¯Êı¹¦ÄÜ£ºÏµÍ³ÍË³öÌáÊ¾Óï
- * ²ÎÊı£ºÎŞ
- * ·µ»ØÖµ£ºÎŞ
+ * å‡½æ•°åŠŸèƒ½ï¼šç³»ç»Ÿé€€å‡ºæç¤ºè¯­
+ * å‚æ•°ï¼šæ— 
+ * è¿”å›å€¼ï¼šæ— 
 */
 void exitPrompt()
 {
 	system("cls");
-	printf("\t\t¸ĞĞ»ÄúÊ¹ÓÃ±¾³¬ÊĞ¿â´æ¹ÜÀíÏµÍ³\n");
+	printf("\t\tæ„Ÿè°¢æ‚¨ä½¿ç”¨æœ¬è¶…å¸‚åº“å­˜ç®¡ç†ç³»ç»Ÿ\n");
 	system("pause");
 }

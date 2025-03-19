@@ -9,12 +9,12 @@ int logInSystem(void)
 {
     system("cls");
     printf("\t\t   ------------------  \n");
-    printf("\t\t|  ÇëÑ¡ÔñÄãÒªµÇÂ¼µÄÉí·İ  |\n");
-    printf("\t\t|  1. ÓÎ¿Í               |\n");
-    printf("\t\t|  2. ÆÕÍ¨Ô±¹¤           |\n");
-    printf("\t\t|  3. ¹ÜÀíÔ±             |\n");
+    printf("\t\t|  è¯·é€‰æ‹©ä½ è¦ç™»å½•çš„èº«ä»½  |\n");
+    printf("\t\t|  1. æ¸¸å®¢               |\n");
+    printf("\t\t|  2. æ™®é€šå‘˜å·¥           |\n");
+    printf("\t\t|  3. ç®¡ç†å‘˜             |\n");
     printf("\t\t   ------------------  \n");
-    printf("\t\tÇëÊäÈëÄãµÄÑ¡Ôñ£º");
+    printf("\t\tè¯·è¾“å…¥ä½ çš„é€‰æ‹©ï¼š");
 
     int choice;
     scanf("%d", &choice);
@@ -22,31 +22,31 @@ int logInSystem(void)
         setPermissionDegree(1);
     } else if (choice == 2) {
         char password[50];
-        printf("\t\tÇëÊäÈëÃÜÂë£º");
+        printf("\t\tè¯·è¾“å…¥å¯†ç ï¼š");
         scanf("%s", password);
         if (strcmp(password, getEmployeePassword()) != 0) {
-            printf("\t\tÃÜÂë´íÎó£¡\n");
+            printf("\t\tå¯†ç é”™è¯¯ï¼\n");
             system("pause");
             return 0;
         }
         setPermissionDegree(2);
     } else if (choice == 3) {
         char password[50];
-        printf("\t\tÇëÊäÈëÃÜÂë£º");
+        printf("\t\tè¯·è¾“å…¥å¯†ç ï¼š");
         scanf("%s", password);
         if (strcmp(password, getAdminPassword()) != 0) {
-            printf("\t\tÃÜÂë´íÎó£¡\n");
+            printf("\t\tå¯†ç é”™è¯¯ï¼\n");
             system("pause");
             return 0;
         }
         setPermissionDegree(3);
     } else {
-        printf("\t\tÊäÈë´íÎó£¡\n");
+        printf("\t\tè¾“å…¥é”™è¯¯ï¼\n");
         system("pause");
         return 0;
     }
 
-    printf("\t\tµÇÂ¼³É¹¦£¡\n");
+    printf("\t\tç™»å½•æˆåŠŸï¼\n");
     system("pause");
     return 1;
 }

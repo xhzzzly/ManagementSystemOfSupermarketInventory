@@ -7,16 +7,16 @@ struct Product {
     double purchasePrice;
     double sellingPrice;
     int inventory;
-    int y, m, d; /* ÏŞÓÃÈÕÆÚ */
+    int y, m, d; /* é™ç”¨æ—¥æœŸ */
 };
 
 #include <vector>
 extern std::vector<Product> products;
 
 /*
-    * ËµÃ÷£º²úÆ·ĞÅÏ¢¹ÜÀí
-    * ÊäÈë²ÎÊı£ºÎŞ
-    * ·µ»ØÖµ£ºÎŞ
+    * è¯´æ˜ï¼šäº§å“ä¿¡æ¯ç®¡ç†
+    * è¾“å…¥å‚æ•°ï¼šæ— 
+    * è¿”å›å€¼ï¼šæ— 
 */
 void productInformationManagement();
 

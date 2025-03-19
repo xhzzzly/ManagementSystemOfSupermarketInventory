@@ -2,9 +2,9 @@
 #define DATA_READING_AND_STORAGE_H
 
 /*
-    * ËµÃ÷£ºÊý¾Ý¶ÁÈ¡Óë´æ´¢
-    * ÊäÈë²ÎÊý£ºÎÞ
-    * ·µ»ØÖµ£ºÎÞ
+    * è¯´æ˜Žï¼šæ•°æ®è¯»å–ä¸Žå­˜å‚¨
+    * è¾“å…¥å‚æ•°ï¼šæ— 
+    * è¿”å›žå€¼ï¼šæ— 
 */
 void dataReadingAndStorage();
 

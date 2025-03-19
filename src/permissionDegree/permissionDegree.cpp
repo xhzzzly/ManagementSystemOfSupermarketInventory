@@ -1,4 +1,4 @@
-/* 0为默认值，1为游客，2为普通员工，3为管理员*/
+/* 0涓洪粯璁ゅ�硷紝1涓烘父瀹紝2涓烘櫘閫氬憳宸ワ紝3涓虹鐞嗗憳*/
 int permission = 0;
 
 int getPermissionDegree() {

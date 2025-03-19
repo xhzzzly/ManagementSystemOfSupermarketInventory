@@ -12,40 +12,40 @@ void mainMenu()
     while (1) {
         system("cls");
 
-        // ½øÈë¹¦ÄÜµÄÈ¨ÏŞÅĞ¶ÏÁô¸ø×Ó¹¦ÄÜÄ£¿é
+        // è¿›å…¥åŠŸèƒ½çš„æƒé™åˆ¤æ–­ç•™ç»™å­åŠŸèƒ½æ¨¡å—
 
         printf("\t\t   ---------------  \n");
-        printf("\t\t|  ³¬ÊĞ¿â´æ¹ÜÀíÏµÍ³  |\n");
-        printf("\t\t|  1. ÉÌÆ·ĞÅÏ¢¹ÜÀí   |\n");
-        printf("\t\t|  2. ¿â´æ¹ÜÀí       |\n");
-        printf("\t\t|  3. ÓÃ»§ÃÜÂë¹ÜÀí   |\n");
-        printf("\t\t|  4. Êı¾İ¶ÁÈ¡Óë´æ´¢ |\n");
-        printf("\t\t|  0. ÍË³öÏµÍ³       |\n");
+        printf("\t\t|  è¶…å¸‚åº“å­˜ç®¡ç†ç³»ç»Ÿ  |\n");
+        printf("\t\t|  1. å•†å“ä¿¡æ¯ç®¡ç†   |\n");
+        printf("\t\t|  2. åº“å­˜ç®¡ç†       |\n");
+        printf("\t\t|  3. ç”¨æˆ·å¯†ç ç®¡ç†   |\n");
+        printf("\t\t|  4. æ•°æ®è¯»å–ä¸å­˜å‚¨ |\n");
+        printf("\t\t|  0. é€€å‡ºç³»ç»Ÿ       |\n");
         printf("\t\t   ---------------  \n");
-        printf("\t\tÇëÑ¡Ôñ£º");
+        printf("\t\tè¯·é€‰æ‹©ï¼š");
         int choice;
         scanf("%d", &choice);
         switch (choice) {
         case 0:
             return;
         case 1:
-            /* ÉÌÆ·ĞÅÏ¢¹ÜÀí */
+            /* å•†å“ä¿¡æ¯ç®¡ç† */
             productInformationManagement();
             break;
         case 2:
-            /* ¿â´æ¹ÜÀí */
+            /* åº“å­˜ç®¡ç† */
             inventoryManagement();
             break;
         case 3:
-            /* ÓÃ»§ÃÜÂë¹ÜÀí */
+            /* ç”¨æˆ·å¯†ç ç®¡ç† */
             userPasswordManagement();
             break;
         case 4:
-            /* Êı¾İ¶ÁÈ¡Óë´æ´¢ */
+            /* æ•°æ®è¯»å–ä¸å­˜å‚¨ */
             dataReadingAndStorage();
             break;
         default:
-            printf("\t\tÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+            printf("\t\tè¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             system("pause");
             break;
         }

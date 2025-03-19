@@ -2,9 +2,9 @@
 #define PERMISSION_DEGREE_H
 
 /*
- * ˵������ȡ��ǰȨ�޵ȼ�
- * �βΣ���
- * ����ֵ��Ȩ�޵ȼ���1-�οͣ�2-��ͨԱ����3-����Ա
+ * 说明：获取当前权限等级
+ * 形参：无
+ * 返回值：权限等级：1-游客，2-普通员工，3-管理员
 */
 int getPermissionDegree();
 

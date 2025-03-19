@@ -12,11 +12,11 @@ void dataReadingAndStorage()
 {
     system("cls");
     printf("\t\t  ------------- \n");
-    printf("\t\t|  1. ¶ÁÈ¡Êı¾İ       |\n");
-    printf("\t\t|  2. ´æ´¢Êı¾İ       |\n");
-    printf("\t\t|  0. ·µ»ØÉÏÒ»¼¶²Ëµ¥ |\n");
+    printf("\t\t|  1. è¯»å–æ•°æ®       |\n");
+    printf("\t\t|  2. å­˜å‚¨æ•°æ®       |\n");
+    printf("\t\t|  0. è¿”å›ä¸Šä¸€çº§èœå• |\n");
     printf("\t\t  ------------- \n");
-    printf("\t\t  ÇëÑ¡Ôñ¹¦ÄÜ£º");
+    printf("\t\t  è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
     int choice;
     scanf("%d", &choice);
     switch (choice) {
@@ -29,7 +29,7 @@ void dataReadingAndStorage()
         case 0:
             return;
         default:
-            printf("\t\tÊäÈë´íÎó\n");
+            printf("\t\tè¾“å…¥é”™è¯¯\n");
             system("pause");
             return;
     }
@@ -38,16 +38,16 @@ void dataReadingAndStorage()
 void readData()
 {
     system("cls");
-    printf("\t\tÇëÊäÈëÎÄ¼şÃû£º");
+    printf("\t\tè¯·è¾“å…¥æ–‡ä»¶åï¼š");
     char fileName[100];
     scanf("%s", fileName);
     FILE *file = fopen(fileName, "r");
     if (file == NULL) {
-        printf("\t\tÎÄ¼ş´ò¿ªÊ§°Ü\n");
+        printf("\t\tæ–‡ä»¶æ‰“å¼€å¤±è´¥\n");
         system("pause");
         return;
     }
-    printf("\t\tÎÄ¼ş´ò¿ª³É¹¦\n");
+    printf("\t\tæ–‡ä»¶æ‰“å¼€æˆåŠŸ\n");
     products.clear();
     while (!feof(file)) {
         Product product;
@@ -55,7 +55,7 @@ void readData()
         products.push_back(product);
     }
     fclose(file);
-    printf("\t\tÊı¾İ¶ÁÈ¡³É¹¦\n");
+    printf("\t\tæ•°æ®è¯»å–æˆåŠŸ\n");
     system("pause");
 }
 
@@ -63,24 +63,24 @@ void storeData()
 {
     system("cls");
     if (getPermissionDegree() == 1) {
-        printf("\t\tÈ¨ÏŞ²»×ã\n");
+        printf("\t\tæƒé™ä¸è¶³\n");
         system("pause");
         return;
     }
-    printf("\t\t´æ´¢Êı¾İ\n");
-    printf("\t\tÇëÊäÈëÎÄ¼şÃû£º");
+    printf("\t\tå­˜å‚¨æ•°æ®\n");
+    printf("\t\tè¯·è¾“å…¥æ–‡ä»¶åï¼š");
     char fileName[100];
     scanf("%s", fileName);
     FILE *file = fopen(fileName, "w");
     if (file == NULL) {
-        printf("\t\tÎÄ¼ş´ò¿ªÊ§°Ü\n");
+        printf("\t\tæ–‡ä»¶æ‰“å¼€å¤±è´¥\n");
         system("pause");
         return;
     }
     for (int i = 0; i < products.size(); i++) {
         fprintf(file, "%s %s %lf %lf %d %d %d %d\n", products[i].id, products[i].name, products[i].purchasePrice, products[i].sellingPrice, products[i].inventory, products[i].y, products[i].m, products[i].d);
     }
-    printf("\t\tÊı¾İ´æ´¢³É¹¦\n");
+    printf("\t\tæ•°æ®å­˜å‚¨æˆåŠŸ\n");
     fclose(file);
     system("pause");
 }

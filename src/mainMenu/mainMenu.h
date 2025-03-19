@@ -1,9 +1,9 @@
 #ifndef MAIN_MENU_H
 #define MAIN_MENU_H
 
-/* ËµÃ÷£ºÖ÷²Ëµ¥º¯Êý
- * ²ÎÊý£ºÎÞ
- * ·µ»ØÖµ£ºÎÞ
+/* è¯´æ˜Žï¼šä¸»èœå•å‡½æ•°
+ * å‚æ•°ï¼šæ— 
+ * è¿”å›žå€¼ï¼šæ— 
  */
 void mainMenu();
 

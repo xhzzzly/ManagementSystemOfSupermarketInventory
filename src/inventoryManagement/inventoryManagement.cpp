@@ -15,13 +15,13 @@ void inventoryManagement()
 {
     system("cls");
     printf("\t\t  ------------- \n");
-    printf("\t\t|  1. Èë¿â           |\n");
-    printf("\t\t|  2. ³ö¿â           |\n");
-    printf("\t\t|  3. ¿â´æÔ¤¾¯       |\n");
-    printf("\t\t|  4. ÏŞÓÃÈÕÆÚÔ¤¾¯   |\n");
-    printf("\t\t|  0. ·µ»ØÉÏÒ»¼¶²Ëµ¥ |\n");
+    printf("\t\t|  1. å…¥åº“           |\n");
+    printf("\t\t|  2. å‡ºåº“           |\n");
+    printf("\t\t|  3. åº“å­˜é¢„è­¦       |\n");
+    printf("\t\t|  4. é™ç”¨æ—¥æœŸé¢„è­¦   |\n");
+    printf("\t\t|  0. è¿”å›ä¸Šä¸€çº§èœå• |\n");
     printf("\t\t  ------------- \n");
-    printf("\t\t  ÇëÑ¡Ôñ¹¦ÄÜ£º");
+    printf("\t\t  è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
     int choice;
     scanf("%d", &choice);
     switch (choice) {
@@ -40,7 +40,7 @@ void inventoryManagement()
         case 0:
             return;
         default:
-            printf("\t\tÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+            printf("\t\tè¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             system("pause");
             break;
     }
@@ -50,22 +50,22 @@ void goodsIn()
 {
     system("cls");
     if (getPermissionDegree() == 1) {
-        printf("\t\tÈ¨ÏŞ²»×ã\n");
+        printf("\t\tæƒé™ä¸è¶³\n");
         system("pause");
         return;
     }
-    printf("\t\tÇëÊäÈëÉÌÆ·ID£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“IDï¼š");
     char id[100];
     scanf("%s", id);
     for (int i = 0; i < products.size(); i++) {
         if (strcmp(products[i].id, id) == 0) {
             products[i].inventory++;
-            printf("\t\tÈë¿â³É¹¦\n");
+            printf("\t\tå…¥åº“æˆåŠŸ\n");
             system("pause");
             return;
         }
     }
-    printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+    printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
     system("pause");
 }
 
@@ -73,44 +73,44 @@ void goodsOut()
 {
     system("cls");
     if (getPermissionDegree() == 1) {
-        printf("\t\tÈ¨ÏŞ²»×ã\n");
+        printf("\t\tæƒé™ä¸è¶³\n");
         system("pause");
         return;
     }
-    printf("\t\tÇëÊäÈëÉÌÆ·ID£º");
+    printf("\t\tè¯·è¾“å…¥å•†å“IDï¼š");
     char id[100];
     scanf("%s", id);
     for (int i = 0; i < products.size(); i++) {
         if (strcmp(products[i].id, id) == 0) {
             products[i].inventory--;
             if (products[i].inventory >= 0) {
-                printf("\t\t³ö¿â³É¹¦\n");
+                printf("\t\tå‡ºåº“æˆåŠŸ\n");
             } else {
                 products[i].inventory = 0;
-                printf("\t\t¿â´æ²»ÄÜµÍÓÚ0£¬ÒÑÖÃÎª0\n");
+                printf("\t\tåº“å­˜ä¸èƒ½ä½äº0ï¼Œå·²ç½®ä¸º0\n");
             }
             system("pause");
             return;
         }
     }
-    printf("\t\tÎ´ÕÒµ½¸ÃÉÌÆ·\n");
+    printf("\t\tæœªæ‰¾åˆ°è¯¥å•†å“\n");
     system("pause");
 }
 
 void inventoryWarning()
 {
     system("cls");
-    printf("\t\tÇëÊäÈë¿â´æÔ¤¾¯Öµ£º");
+    printf("\t\tè¯·è¾“å…¥åº“å­˜é¢„è­¦å€¼ï¼š");
     int warningValue;
     scanf("%d", &warningValue);
     for (int i = 0; i < products.size(); i++) {
         if (products[i].inventory < warningValue) {
-            printf("\t\tÉÌÆ·ID£º%s ¿â´æ²»×ã\n", products[i].id);
+            printf("\t\tå•†å“IDï¼š%s åº“å­˜ä¸è¶³\n", products[i].id);
         }
     }
     for (int i = 0; i < products.size(); i++) {
         if (products[i].inventory < warningValue - 10 && products[i].inventory >= warningValue) {
-            printf("\t\tÉÌÆ·ID£º%s ¿â´æ½Ó½üÔ¤¾¯Öµ\n", products[i].id);
+            printf("\t\tå•†å“IDï¼š%s åº“å­˜æ¥è¿‘é¢„è­¦å€¼\n", products[i].id);
         }
     }
     system("pause");
@@ -124,17 +124,17 @@ int compareDate(const Product &a, const Product &b)
 void expirationDateWarning()
 {
     system("cls");
-    printf("\t\tÇëÊäÈëÏŞÓÃÈÕÆÚÔ¤¾¯Öµ£º");
+    printf("\t\tè¯·è¾“å…¥é™ç”¨æ—¥æœŸé¢„è­¦å€¼ï¼š");
     int warningValue;
     scanf("%d", &warningValue);
     for (int i = 0; i < products.size(); i++) {
         if (compareDate(products[i], products[0]) < warningValue) {
-            printf("\t\tÉÌÆ·ID£º%s ÏŞÓÃÈÕÆÚ²»×ã\n", products[i].id);
+            printf("\t\tå•†å“IDï¼š%s é™ç”¨æ—¥æœŸä¸è¶³\n", products[i].id);
         }
     }
     for (int i = 0; i < products.size(); i++) {
         if (compareDate(products[i], products[0]) < warningValue - 10 && compareDate(products[i], products[0]) >= warningValue) {
-            printf("\t\tÉÌÆ·ID£º%s ÏŞÓÃÈÕÆÚ½Ó½üÔ¤¾¯Öµ\n", products[i].id);
+            printf("\t\tå•†å“IDï¼š%s é™ç”¨æ—¥æœŸæ¥è¿‘é¢„è­¦å€¼\n", products[i].id);
         }
     }
     system("pause");
